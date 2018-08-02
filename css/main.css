@@ -6,19 +6,22 @@ body{
   font-family: 'Bitter', serif;
   color: #FFE521;
   font-size: 2rem;
-  margin-top: 10vw;
+  margin-top: 2vh;
 }
 
-header{
+/* header{
   background-color: red;
-}
+} */
 
 #mapa {
-   width: 100%;
-   height: 400px;
+   height: 40vh;
+   width: 70%;
    background-color: grey;
  }
 
+input{
+  width: 70%;
+}
 
 /* hr{
   height: 10px;

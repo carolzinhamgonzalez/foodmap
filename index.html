@@ -6,25 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans:400,800" rel="stylesheet" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <link href="https://file.myfontastic.com/E2rT9D9xcxaxuzrYNBcNdY/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>FoodMap</title>
   </head>
-  <body class="container-fluid d-flex justify-content-center">
-    <div class="">
+  <body class="container-fluid d-flex flex-column align-items-center">
+    <div class="d-flex">
       <header class="container logo"> FoodMap </header>
     </div>
-    <section id="mapa">
-      <!-- O script comentado é o do Google maps -->
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqpDX1ikpSwgomtLkh8Auj2VTPAHAUmxc&callback=initialize">
-      </script>
     <section>
+      <div class="input-group mt-3 mb-3">
+        <input type="text" class="form-control container" id="filter" placeholder="Qual comida você quer?" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary icon-search" type="button"></button>
+        </div>
+      </div>
+    </section>
+    <section id="mapa" class="container row">
+      <div class="col-sm offset-2">
+        <!-- O script comentado é o do Google maps -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqpDX1ikpSwgomtLkh8Auj2VTPAHAUmxc&callback=initialize">
+        </script>
+      </div>
+    <section>
+    <section class="container photos">
+
+    </section>
 
 
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"crossorigin="anonymous"></script>
     <script src="js/data.js"></script>
