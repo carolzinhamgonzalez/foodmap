@@ -15,24 +15,26 @@ initialize();
 // var valueInput;
 $(document).ready(function(){
     var valueInput;
+    var typeFoods;
+    var nameRest;
     $('.btn').click(function(){
       valueInput = $('#filter').val();
-      // return valueInput;
-    })
+      // var tipo = tipo.type;
+      // if (valueInput)
+      // fazer uma função fora do Jquery onde já pega o input e compara tudo e aqui no click só chamar essa função
+    });
     // return valueInput;
-})
+    $.map(restaurantes, function(i) {
+      typeFoods = i.type;
+      nameRest = i.name;
+      // var arrayType = $.makeArray(typeFoods);
+      // console.log(typeFoods);
+      // console.log(typeFoods);
+    });
+    if (valueInput === typeFoods || valueInput === nameRest){
+      console.log(true);
+    }
+});
 
-console.log(type);
-
-// if (valueInput === oi) {
-//
-// }
-
-// restaurantes.map(type)
-
-function type () {
-  for (types in restaurantes){
-    var comidas = type[types];
-    return comidas;
-  }
-}
+// var typeFoods = restaurantes.map(tipo => tipo.type);
+// console.log(typeFoods);
