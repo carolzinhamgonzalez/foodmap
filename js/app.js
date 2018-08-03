@@ -12,17 +12,27 @@ function initialize() {
 initialize();
 
 // filtrar os restaurantes
-$(document).ready(function()){
-    $('#filter').click(=>{
-      var value = $(this).val();
-      return value;
+// var valueInput;
+$(document).ready(function(){
+    var valueInput;
+    $('.btn').click(function(){
+      valueInput = $('#filter').val();
+      // return valueInput;
     })
-    console.log(value);
+    // return valueInput;
+})
 
-    // $( "#filter" ).keyup(function() {
-    //     var value = $( this ).val();
-    //     $( "p" ).text( value );
-    //   })
-    //   .keyup();
+console.log(type);
 
+// if (valueInput === oi) {
+//
+// }
+
+// restaurantes.map(type)
+
+function type () {
+  for (types in restaurantes){
+    var comidas = type[types];
+    return comidas;
+  }
 }
