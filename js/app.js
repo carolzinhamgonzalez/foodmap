@@ -44,12 +44,11 @@ $(document).ready(function(){
         if (compareType === true || compareName){
           $('<img>').attr('src', img).attr('id', name).appendTo('.photos');
         } else {
-          console.log("deu falso");
+          alert("Não encontramos essa opção perto de você. Tente novamente");
+          // $('<p></p>').text('Não encontramos essa opção perto de você. Tente novamente').appendTo('.photos');
         }
       })
     };
-
-
 
 });
 
