@@ -1,3 +1,41 @@
+// filtrar os restaurantes
+$(document).ready(function(){
+  // tela splash
+    $('#start-page').delay('3000').fadeIn('slow');
+    $('.btn').click(function(){
+      $('.photos').children().remove();
+      filter();
+      $('#filter').val('');
+    });
+    function value(){
+      var valueInput;
+      valueInput = $('#filter').val();
+      return valueInput;
+    };
+    function filter() {
+      var getData = $.map(restaurantes, function(i, n) {
+        var valueArr = value();
+        var type = i.type;
+        var name = i.name;
+        var img = i.image;
+        console.log(n);
+        var description = i.description;
+        for (restaurante of restaurantes) {
+          var compareType = valueArr.startsWith(type);
+          var compareName = valueArr.startsWith(name);
+        }
+        if (compareType === true || compareName === true){
+          $('<img>').attr('src', img).attr('data-toggle', "modal").attr('data-target', "#res-"+n).appendTo('.photos');
+
+          var modalHtml = '<div class="modal fade" id="res-'+ n +'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id=modal-title-"'+ n +'">'+ name +'</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">'+ description +'</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button><button type="button" class="btn btn-warning">Realizar pedido</button></div></div></div></div> ';
+          var divModais = $('#modais').html();
+          var modais = divModais + modalHtml;
+          $('#modais').html(modais);
+        }
+      });
+    };
+});
+
 // inserção do mapa
 // var map;
 // function initialize() {
@@ -11,117 +49,19 @@
 // }
 // initialize();
 
-// filtrar os restaurantes
-// var valueInput;
-$(document).ready(function(){
-    $('.btn').click(function(){
-      // valueInput = $('#filter').val();
-      // console.log(value());
-      // console.log(types());
-      // console.log(namesRest());
-      // console.log(compareTypes());
-      // console.log(images());
-      $('.photos').children().remove();
-      console.log(filter());
-      // fazer uma função fora do Jquery onde já pega o input e compara tudo e aqui no click só chamar essa função
-    });
-    function value(){
-      var valueInput;
-      valueInput = $('#filter').val();
-      return valueInput;
-    };
-    function filter() {
-      var getData = $.map(restaurantes, function(i) {
-        var valueArr = value();
-        var type = i.type;
-        var name = i.name;
-        var img = i.image;
 
-        for (restaurante of restaurantes) {
-          var compareType = valueArr.startsWith(type);
-          var compareName = valueArr.startsWith(name);
-          }
-        if (compareType === true || compareName){
-          $('<img>').attr('src', img).attr('id', name).appendTo('.photos');
-        } else {
-          alert("Não encontramos essa opção perto de você. Tente novamente");
-          // $('<p></p>').text('Não encontramos essa opção perto de você. Tente novamente').appendTo('.photos');
-        }
-      })
-    };
-
-});
-
-// var typeFoods = restaurantes.map(tipo => tipo.type);
-// console.log(typeFoods);
-
-
-
-
-
-
-
-
-
-
-// function types(){
-//   var typeFoods = $.map(restaurantes, function(i){
-//     let getData = i.type;
-//     return getData;
-//   });
-//   return typeFoods;
-// }
-// function namesRest(){
-//   var name = $.map(restaurantes, function(i){
-//     let getData = i.name;
-//     return getData;
-//   });
-//   return name;
-// }
-// function images(){
-//   var imgs = $.map(restaurantes, function(i){
-//     let getData = i.image;
-//     return getData;
-//   });
-//   return imgs;
-// }
-// function compareTypes(){
-//   var typesArr = types();
-//   var valueArr = value();
-//   for(type of typesArr){
-//     var compare = valueArr.startsWith(type);
-//     if (compare === true){
-//       $('<img>').atrr('src', )
-//     }
-//   }
+// Função para carregar pins;
+// function toChargePins () {
 //
-//    <img src="imagem.jpg" alt="Minha Figura">
+//   //percorre o data;
+//   $.each(restaurantes, function (i, restaurant) {
+//     var marker = new google.maps.Marker({
+//       position: new google.maps.LatLng(restaurant.latitude, restaurant.longitude),
+//       title: "Restaurantes",
+//       map: map,
+//     });
+//     $('<img>').attr('src', restaurant.image).attr('id', restaurant.name).appendTo('#restaurant-shower');
+//     openModal();
+//     });
 //
-//    $.each(restaurantes, function (i, restaurant){
-//           if(restaurant.type === inputValue){
-//
-//             //cria a imagem no campo destinado aos restaurantes;
-//             $('<img>').attr('src', restaurant.image).attr('id', restaurant.name).appendTo('#restaurant-shower');
-//             openModal();
-//           }
-// //
-//   return compare;
-// }
-
-
-// function compareNames(){
-//   var namesArr = namesRest();
-//   var valueArr = value();
-//   for(name of namesArr){
-//     var compare = valueArr.startsWith(name);
-//   }
-//   return compare;
-// }
-// function condition(){
-//
-// }
-// if (compareTypes === true){
-//
-// } else {
-//   alert("Você não está perto de nenhum restaurante correspondente. Encontramos essa variedade de comida próxima a você " + types() + ".");
 // }
