@@ -1,3 +1,16 @@
+.initial{
+  background-color: #000000;
+  font-family: 'Bitter', serif;
+  font-weight: 800;
+  color: #FFE521;
+  font-size: 3rem;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body{
   background-color: #000000;
 }
@@ -15,9 +28,6 @@ p{
   font-size: 1rem;
   margin: 2vh;
 }
-/* header{
-  background-color: red;
-} */
 
 #mapa {
    height: 40vh;
@@ -36,16 +46,6 @@ img{
 }
 
 .photos{
-  /* background-color: red; */
   height: 30vh;
   width: 73vw;
 }
-
-/* .btn-modal{
-  color: #FFE521;
-  background-color: #000000;
-} */
-/* hr{
-  height: 10px;
-  border: none;
-} */

@@ -1,17 +1,20 @@
 // filtrar os restaurantes
 $(document).ready(function(){
   // tela splash
-    $('#start-page').delay('3000').fadeIn('slow');
+    $('.initial').fadeToggle(4000);
+  // função click
     $('.btn').click(function(){
       $('.photos').children().remove();
       filter();
       $('#filter').val('');
     });
+// função para pegar o valor do input
     function value(){
       var valueInput;
       valueInput = $('#filter').val();
       return valueInput;
     };
+// função para filtrar, devolver restaurantes, imagens e modais
     function filter() {
       var getData = $.map(restaurantes, function(i, n) {
         var valueArr = value();
@@ -37,31 +40,14 @@ $(document).ready(function(){
 });
 
 // inserção do mapa
-// var map;
-// function initialize() {
-//     var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
-//     var options = {
-//         zoom: 5,
-//         center: latlng,
-//         mapTypeId: google.maps.MapTypeId.ROADMAP
-//     };
-//     map = new google.maps.Map(document.getElementById("mapa"), options);
-// }
-// initialize();
-
-
-// Função para carregar pins;
-// function toChargePins () {
-//
-//   //percorre o data;
-//   $.each(restaurantes, function (i, restaurant) {
-//     var marker = new google.maps.Marker({
-//       position: new google.maps.LatLng(restaurant.latitude, restaurant.longitude),
-//       title: "Restaurantes",
-//       map: map,
-//     });
-//     $('<img>').attr('src', restaurant.image).attr('id', restaurant.name).appendTo('#restaurant-shower');
-//     openModal();
-//     });
-//
-// }
+var map;
+function initialize() {
+    var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
+    var options = {
+        zoom: 5,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("mapa"), options);
+}
+initialize();
